@@ -308,3 +308,16 @@ body
     background-color: #073642;
     border: 1px solid #859900;
 }
+
+.custom-footer
+{
+    width: auto;
+    color: #859900;
+    background-color: rgba(0, 43, 54, 0.9);
+    /*background-color: rgba(0, 43, 54, 0.3);*/
+    margin-top: 50px;
+    float: right;
+    position: absolute 90% 90%;
+    padding: 10px;
+    border: 1px solid #859900;
+}

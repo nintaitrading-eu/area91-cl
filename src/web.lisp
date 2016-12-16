@@ -24,7 +24,7 @@
 ;; Routing rules
 
 (defroute "/" ()
-  (render #P"index.html"))
+  (render #P"main/main.html"))
 
 ;;
 ;; Error pages

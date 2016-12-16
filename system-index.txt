@@ -1,3 +1,2 @@
 area91.asd
-tmp\area91.asd
 area91-test.asd

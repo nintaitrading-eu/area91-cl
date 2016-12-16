@@ -1,0 +1,15 @@
+<h1 class="centered">Create new account</h1>
+<p>
+  <form action="<%=admin_account_path(@conn, :create) %>" method="post">
+    <div class="form-group">
+      <input type="hidden" name="_csrf_token" value="<%= get_csrf_token %>">
+      <label for="txt_account[name]">Name</label>
+      <input type="text" name="txt_account[name]" class="form-control" />
+      <label for="txt_account[description]">Description</label>
+      <input type="text" name="txt_account[description]" class="form-control" />
+    </div>
+    <div class="pure-control-group">
+      <button type="submit" class="pure-button pure-button-active">Save</button>
+    </div>
+  </form>
+</p>

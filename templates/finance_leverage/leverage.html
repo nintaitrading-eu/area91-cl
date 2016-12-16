@@ -1,0 +1,19 @@
+{% extends "layouts/default.html" %}
+{% block title %}Area91{% endblock %}
+{% block content %}
+<h1 class="centered">Leverage calculation</h1>
+<p>
+  <form action="<%=finance_leverage_path(@conn, :leverage) %>" method="post">
+    <div class="form-group">
+      <label for="edt_leveraged_contracts">Number of contracts</label>
+      <input type="text" name="edt_leveraged_contracts" class="form-control" />
+    </div>
+  </form>
+</p>
+<!--% if p_leveraged_contracts >= 1 %-->
+<p>Recommended contracts to buy, when using leverage: <span class="result"><%= @p_leveraged_contracts %></span>.</p>
+<!--% else %-->
+<p> Use the money management page, to calculate the number of contracts to buy.</p>
+<p> If you want to use leverage, use the above form to calculate the leverage-adjusted number of contracts to use.</p>
+<!--% endif %-->
+{% endblock %}

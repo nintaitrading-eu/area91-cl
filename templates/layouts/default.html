@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/css/pure-min.css">
     <link rel="stylesheet" href="/css/custom_style.css">
     <link rel="stylesheet" href="/css/font-awesome-4.6.3/css/font-awesome.min.css">
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 <body>
     <!--div class="header">
@@ -25,7 +25,7 @@
     <script src="/js/pure-css-menu.js"></script>
     <div class="custom-menu-wrapper">
         <div class="pure-menu custom-menu custom-menu-top">
-            <a href="#" class="pure-menu-heading custom-menu-brand"><img src="<%= static_path(@conn, "/favicon.png") %>" /></a>
+            <a href="#" class="pure-menu-heading custom-menu-brand"><img src="/images/favicon.png" /></a>
             <a href="#" class="custom-menu-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>
         </div>
         <div class="pure-menu pure-menu-horizontal custom-menu custom-menu-bottom custom-menu-tucked" id="tuckedMenu">
@@ -66,8 +66,6 @@
             });
         })(this, this.document);
     </script>
-    <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-    <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
     <main role="main" id="main">
       {% block content %}{% endblock %}

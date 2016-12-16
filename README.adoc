@@ -3,3 +3,8 @@
 
 A common lisp implementation of a web application
 for registering data, related to trading and investing.
+
+== startup instructions
+sbcl
+(ql:quickload :area91)
+(area91:start :port 5000)

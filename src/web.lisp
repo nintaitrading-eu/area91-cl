@@ -26,6 +26,10 @@
 (defroute "/" ()
   (render #P"main/main.html"))
 
+@route GET "/about"
+(defun about-page ()
+  (render #P"about/about.html"))
+
 ;;
 ;; Error pages
 

@@ -28,7 +28,10 @@
 
 @route GET "/about"
 (defun about-page ()
-  (render #P"about/about.html"))
+  (render #P"about/about.html"
+    (list :app-env (appenv)
+          :application_version "0.0.1"
+          :application_version_info "Add something here?")))
 
 ;;
 ;; Error pages

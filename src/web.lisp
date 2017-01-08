@@ -4,6 +4,7 @@
         :caveman2
         :area91.config
         :area91.view
+        :area91.model
         :area91.db
         :datafly
         :sxql)
@@ -30,8 +31,10 @@
 (defun about-page ()
   (render #P"about/about.html"
     (list :app-env (appenv)
-          :application_version "0.0.1"
-          :application_version_info "Add something here?")))
+          :application_version (nth 1 (get-version-application))
+          :application_version_info (nth 3 (get-version-application))
+          :database_version (nth 1 (get-version-database))
+          :database_version_info (nth 3 (get-version-database)))))
 
 ;;
 ;; Error pages

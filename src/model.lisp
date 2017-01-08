@@ -1,7 +1,6 @@
 ;;;; model.lisp
 
 (in-package :cl-user)
-
 (defpackage area91.model
   (:use :cl :sxql)
   (:import-from :area91.db
@@ -14,7 +13,6 @@
                 :retrieve-one)
   (:export :get-version-application
            :get-version-database))
-
 (in-package :area91.model)
 
 

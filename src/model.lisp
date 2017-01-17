@@ -15,17 +15,10 @@
            :get-version-database))
 (in-package :area91.model)
 
-
-(defun get-version-application ()
-  "Get the application version."
+(defun get-version-info ()
+  "Get application/database version info.
+Retrieves everything, to limit number of database calls."
   (with-connection (db)
     (retrieve-one
-      (select (:application_version :application_version_info)
-        (from :t_version)))))
-
-(defun get-version-database ()
-  "Get the database version."
-  (with-connection (db)
-    (retrieve-one
-      (select (:database_version :database_version_info)
+      (select (:application_version :application_version_info :database_version :database_version_info)
         (from :t_version)))))

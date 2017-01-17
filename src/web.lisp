@@ -31,10 +31,7 @@
 (defun about-page ()
   (render #P"about/about.html"
     (list :app-env (appenv)
-          :application_version (nth 1 (get-version-application))
-          :application_version_info (nth 3 (get-version-application))
-          :database_version (nth 1 (get-version-database))
-          :database_version_info (nth 3 (get-version-database)))))
+          :version_info (get-version-info))))
 
 ;;
 ;; Error pages

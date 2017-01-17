@@ -5,7 +5,7 @@
 <p>
   <ul>
     <li>APPENV = {{ app-env }}</li>
-    <li>Application version = {{ application_version }} ({{ application_version_info }})</li>
+    <li>Application version = {{ (nth 1 version_info) }} ({{ application_version_info }})</li>
     <li>Database version = {{ database_version }} ({{ database_version_info }})</li>
   </ul>
 </p>

@@ -15,10 +15,17 @@
            :get-version-database))
 (in-package :area91.model)
 
+;;; T_VERSION
 (defun get-version-info ()
-  "Get application/database version info.
-Retrieves everything, to limit number of database calls."
+  "Get application/database version info."
   (with-connection (db)
     (retrieve-one
       (select (:application_version :application_version_info :database_version :database_version_info)
         (from :t_version)))))
+
+;;; T_ACCOUNT
+(defun get-account-info ()
+  "Get account info."
+  (with-connection (db)
+    (retrieve-one
+      (select (:*) (from :t_account)))))

@@ -4,9 +4,9 @@
 <p>About Area91:</p>
 <p>
   <ul>
-    <li>APPENV = {{ app-env }}</li>
-    <li>Application version = {{ (nth 1 version_info) }} ({{ application_version_info }})</li>
-    <li>Database version = {{ database_version }} ({{ database_version_info }})</li>
+    <li>APPENV = {{ p_appenv }}</li>
+    <li>Application version = {{ p_application_version }} ({{ p_application_version_info }})</li>
+    <li>Database version = {{ p_database_version }} ({{ p_database_version_info }})</li>
   </ul>
 </p>
 {% endblock %}

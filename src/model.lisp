@@ -11,8 +11,8 @@
                 :execute
                 :retrieve-all
                 :retrieve-one)
-  (:export :get-version-application
-           :get-version-database))
+  (:export :get-version-info
+           :get-account-info))
 (in-package :area91.model)
 
 ;;; T_VERSION

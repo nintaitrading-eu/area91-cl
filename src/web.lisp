@@ -37,6 +37,13 @@
       :p_database_version (nth 5 (z-version-info))
       :p_database_version_info (nth 7 (z-version-info)))))))
 
+@route GET "/admin/account"
+(defun admin-account-page ()
+  (let (z-account-info (get-account-info)
+  (render #P"admin/account.html"
+    (list 
+      :p_accounts (z-account-info))))))
+
 ;;
 ;; Error pages
 

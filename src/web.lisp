@@ -29,20 +29,20 @@
 
 @route GET "/about"
 (defun about-page ()
-  (let (z-version-info (get-version-info)
+  (let ((z-version-info (get-version-info)))
   (render #P"about/about.html"
     (list :p_appenv (appenv)
-      :p_application_version (nth 1 (z-version-info))
-      :p_application_version_info (nth 3 (z-version-info))
-      :p_database_version (nth 5 (z-version-info))
-      :p_database_version_info (nth 7 (z-version-info)))))))
+      :p_application_version (nth 1 z-version-info)
+      :p_application_version_info (nth 3 z-version-info)
+      :p_database_version (nth 5 z-version-info)
+      :p_database_version_info (nth 7 z-version-info)))))
 
 @route GET "/admin/account"
 (defun admin-account-page ()
-  (let (z-account-info (get-account-info)
+  (let ((z-account-info (get-account-info)))
   (render #P"admin/account.html"
     (list 
-      :p_accounts (z-account-info))))))
+      :p_accounts z-account-info))))
 
 ;;
 ;; Error pages

@@ -40,7 +40,7 @@
 @route GET "/admin/account"
 (defun admin-account-page ()
   (let ((z-account-info (get-account-info)))
-  (render #P"admin/account.html"
+  (render #P"admin/account/account.html"
     (list 
       :p_accounts z-account-info))))
 

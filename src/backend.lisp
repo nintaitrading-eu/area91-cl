@@ -1,16 +1,13 @@
 (in-package :cl-user)
-(defpackage area91.db
+(defpackage area91.backend
   (:use :cl)
   (:import-from :area91.config
                 :config)
-  (:import-from :datafly
-                :*connection*
-                :connect-cached)
   (:export :connection-settings
            :db
            :with-connection
            :with-transaction))
-(in-package :area91.db)
+(in-package :area91.backend)
 
 (defun connection-settings (&optional (db :maindb))
   (cdr (assoc db (config :databases))))

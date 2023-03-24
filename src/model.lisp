@@ -2,15 +2,7 @@
 
 (in-package :cl-user)
 (defpackage area91.model
-  (:use :cl :sxql)
-  (:import-from :area91.db
-                :db
-                :with-connection
-                :with-transaction)
-  (:import-from :datafly
-                :execute
-                :retrieve-all
-                :retrieve-one)
+  (:use :cl)
   (:export :get-version-info
            :get-account-info))
 (in-package :area91.model)
@@ -18,14 +10,20 @@
 ;;; T_VERSION
 (defun get-version-info ()
   "Get application/database version info."
-  (with-connection (db)
-    (retrieve-one
-      (select (:application_version :application_version_info :database_version :database_version_info)
-        (from :t_version)))))
+  ; TODO: use dexador get
+  ;(with-connection (db)
+  ;  (retrieve-one
+  ;    (select (:application_version :application_version_info :database_version :database_version_info)
+  ;      (from :t_version)))))
+  (princ "NOT IMPLEMENTED YET...")
+)
 
 ;;; T_ACCOUNT
 (defun get-account-info ()
   "Get account info."
-  (with-connection (db)
-    (retrieve-one
-      (select (:*) (from :t_account)))))
+  ; TODO: use dexador get
+  (princ "NOT IMPLEMENTED YET...")
+  ;(with-connection (db)
+  ;  (retrieve-one
+  ;    (select (:*) (from :t_account)))))
+)

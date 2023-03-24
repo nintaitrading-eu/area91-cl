@@ -5,9 +5,8 @@
         :area91.config
         :area91.view
         :area91.model
-        :area91.db
-        :datafly
-        :sxql)
+        :area91.backend
+        :cl-json)
   (:export :*web*))
 (in-package :area91.web)
 

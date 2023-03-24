@@ -11,7 +11,7 @@
                 :compile-template*
                 :render-template*
                 :*djula-execute-package*)
-  (:import-from :datafly
+  (:import-from :cl-json
                 :encode-json)
   (:export :render
            :render-json))

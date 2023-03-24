@@ -20,19 +20,18 @@
                ;; HTML Template
                :djula
 
-               ;; for DB
-               :datafly
-               :sxql
+               ;; Json
+               :cl-json
                ;; Password hashing
                :cl-pass)
   :components ((:module "src"
                 :components
-                ((:file "main" :depends-on ("config" "view" "model" "db"))
+                ((:file "main" :depends-on ("config" "view" "model"))
                  (:file "about")
                  (:file "web" :depends-on ("view"))
                  (:file "view" :depends-on ("config"))
-                 (:file "model" :depends-on ("db"))
-                 (:file "db" :depends-on ("config"))
+                 (:file "model" :depends-on ("backend"))
+                 (:file "backend" :depends-on ("config"))
                  (:file "config"))))
   :description ""
   :in-order-to ((test-op (load-op area91-test))))

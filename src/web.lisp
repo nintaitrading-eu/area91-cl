@@ -28,13 +28,16 @@
 
 @route GET "/about"
 (defun about-page ()
-  (let ((z-version-info (get-version-info)))
+  (let ((z-version-info (car (get-version-info))))
+(progn
+  (format t "TEST: ~a" z-version-info)
   (render #P"about/about.html"
     (list :p_appenv (appenv)
-      :p_application_version (nth 1 z-version-info)
-      :p_application_version_info (nth 3 z-version-info)
-      :p_database_version (nth 5 z-version-info)
-      :p_database_version_info (nth 7 z-version-info)))))
+      :p_application_version (cdr (assoc :application--version z-version-info))
+      :p_application_version_info (cdr (assoc :application--version--info z-version-info))
+      :p_database_version (cdr (assoc :database--version z-version-info))
+      :p_database_version_info (cdr (assoc :database--version--info z-version-info))))))
+)
 
 @route GET "/admin/account"
 (defun admin-account-page ()

@@ -17,11 +17,15 @@
                ;; for @route annotation
                :cl-syntax-annot
 
+	       ;; Http client
+	       :dexador
+
                ;; HTML Template
                :djula
 
                ;; Json
                :cl-json
+
                ;; Password hashing
                :cl-pass)
   :components ((:module "src"

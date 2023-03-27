@@ -3,6 +3,11 @@
 (in-package :cl-user)
 (defpackage area91.model
   (:use :cl)
+  (:import-from :area91.backend
+		:api
+		:with-connection)
+  (:import-from :cl-json
+                :decode-json)
   (:export :get-version-info
            :get-account-info))
 (in-package :area91.model)
@@ -15,15 +20,13 @@
   ;  (retrieve-one
   ;    (select (:application_version :application_version_info :database_version :database_version_info)
   ;      (from :t_version)))))
-  (princ "NOT IMPLEMENTED YET...")
-)
+  ;(with-connection (api)
+    (decode-json (dex:get (concatenate 'string "http://127.0.0.1:8891" "/version") :want-stream t)))
+;)
 
 ;;; T_ACCOUNT
 (defun get-account-info ()
   "Get account info."
-  ; TODO: use dexador get
-  (princ "NOT IMPLEMENTED YET...")
-  ;(with-connection (db)
-  ;  (retrieve-one
-  ;    (select (:*) (from :t_account)))))
-)
+  ;(with-connection (api)
+    (decode-json (dex:get (concatenate 'string "http://127.0.0.1:8891" "/account") :want-stream t)))
+;)

@@ -30,11 +30,10 @@
                :cl-pass)
   :components ((:module "src"
                 :components
-                ((:file "main" :depends-on ("config" "view" "model"))
-                 (:file "about")
-                 (:file "web" :depends-on ("view"))
+                ((:file "main" :depends-on ("config"))
+                 (:file "controllers/maincontroller" :depends-on ("view" "models/versionmodel"))
                  (:file "view" :depends-on ("config"))
-                 (:file "model" :depends-on ("backend"))
+                 (:file "models/versionmodel" :depends-on ("backend"))
                  (:file "backend" :depends-on ("config"))
                  (:file "config"))))
   :description ""

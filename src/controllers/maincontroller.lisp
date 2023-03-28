@@ -1,14 +1,14 @@
 (in-package :cl-user)
-(defpackage area91.web
+(defpackage area91.maincontroller
   (:use :cl
         :caveman2
         :area91.config
         :area91.view
-        :area91.model
+        :area91.versionmodel
         :area91.backend
         :cl-json)
   (:export :*web*))
-(in-package :area91.web)
+(in-package :area91.maincontroller)
 
 ;; for @route annotation
 (syntax:use-syntax :annot)

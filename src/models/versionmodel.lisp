@@ -1,7 +1,7 @@
-;;;; model.lisp
+;;;; versionmodel.lisp
 
 (in-package :cl-user)
-(defpackage area91.model
+(defpackage area91.versionmodel
   (:use :cl)
   (:import-from :area91.backend
 		:api
@@ -10,7 +10,7 @@
                 :decode-json)
   (:export :get-version-info
            :get-account-info))
-(in-package :area91.model)
+(in-package :area91.versionmodel)
 
 ;;; T_VERSION
 (defun get-version-info ()

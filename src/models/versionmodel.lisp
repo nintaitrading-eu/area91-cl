@@ -23,10 +23,3 @@
   ;(with-connection (api)
     (decode-json (dex:get (concatenate 'string "http://127.0.0.1:8891" "/version") :want-stream t)))
 ;)
-
-;;; T_ACCOUNT
-(defun get-account-info ()
-  "Get account info."
-  ;(with-connection (api)
-    (decode-json (dex:get (concatenate 'string "http://127.0.0.1:8891" "/account") :want-stream t)))
-;)

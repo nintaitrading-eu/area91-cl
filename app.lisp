@@ -7,7 +7,7 @@
   (:import-from :ppcre
                 :scan
                 :regex-replace)
-  (:import-from :area91.web
+  (:import-from :area91.initcontroller
                 :*web*)
   (:import-from :area91.config
                 :config

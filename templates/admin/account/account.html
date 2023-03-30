@@ -13,7 +13,7 @@
           <tr>
             <th>name</th>
             <th>description</th>
-            <th>is_active</th>
+            <th>is_deleted</th>
             <th>date_created</th>
             <th>date_modified</th>
             <th>&nbsp;</th>
@@ -24,7 +24,7 @@
           <tr>
             <td>{{ l_account.name }}</td>
             <td>{{ l_account.description }}</td>
-            <td>TBD</td>
+            <td>{% if l_account.is_deleted %}&#9745;{% else %}&#9744;{% endif %}</td>
             <td>{{ l_account.date_created }}</td>
             <td>{{ l_account.date_modified }}</td>
             <td>
@@ -32,7 +32,7 @@
               <!--a href="<%= admin_account_path(@conn, :delete, l_account) %>" title="Delete" alt="Delete" data-method="DELETE" class="rest pure-button"><i class="fa fa-trash-o" aria-hidden="true"></i></a-->
             </td>
           </tr>
-          {% end %}
+          {% endfor %}
         </tbody>
       </table>
     </div>

@@ -6,8 +6,8 @@
   (:import-from :area91.backend
 		:api
 		:with-connection)
-  (:import-from :cl-json
-                :decode-json)
+  (:import-from :jonathan
+                :parse)
   (:export :get-version-info
            :get-account-info))
 (in-package :area91.versionmodel)
@@ -21,5 +21,8 @@
   ;    (select (:application_version :application_version_info :database_version :database_version_info)
   ;      (from :t_version)))))
   ;(with-connection (api)
-    (decode-json (dex:get (concatenate 'string "http://127.0.0.1:8891" "/version") :want-stream t)))
+  (progn
+    (format t "~A" (dex:get (concatenate 'string "http://127.0.0.1:8891" "/version") :want-stream t))
+    (parse (dex:get (concatenate 'string "http://127.0.0.1:8891" "/version")) :as :plist)
+  ))
 ;)

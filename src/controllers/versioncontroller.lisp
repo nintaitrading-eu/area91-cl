@@ -5,8 +5,7 @@
         :area91.config
         :area91.view
         :area91.versionmodel
-        :area91.backend
-        :cl-json)
+        :area91.backend)
   (:export :show-about))
 (in-package :area91.versioncontroller)
 
@@ -17,8 +16,8 @@
   (format t "TEST: ~a" z-version-info)
   (render #P"about/about.html"
     (list :p_appenv (appenv)
-      :p_application_version (cdr (assoc :application--version z-version-info))
-      :p_application_version_info (cdr (assoc :application--version--info z-version-info))
-      :p_database_version (cdr (assoc :database--version z-version-info))
-      :p_database_version_info (cdr (assoc :database--version--info z-version-info))))))
+      :p_application_version (getf z-version-info :|application_version|)
+      :p_application_version_info (getf z-version-info :|application_version_info|)
+      :p_database_version (getf z-version-info :|database_version|)
+      :p_database_version_info (getf z-version-info :|database_version_info|)))))
 )

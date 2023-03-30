@@ -1,7 +1,7 @@
 {% extends "layouts/default.html" %}
 {% block title %}Area91{% endblock %}
 {% block content %}
-<!--p-->
+<p>
   <!--form action="" method="post" name="frmAccount" class="pure-form pure-form-aligned"-->
     <div class="pure-control-group">
       <a href="/admin/account/new" class="pure-button pure-button-active"><i class="fa fa-file" title="New" aria-hidden="true"></i></a>
@@ -24,7 +24,7 @@
           <tr>
             <td>{{ l_account.name }}</td>
             <td>{{ l_account.description }}</td>
-            <td>{% if l_account.is_active %}&#9745;{% else %}&#9744;{% endif %}</td>
+            <td>TBD</td>
             <td>{{ l_account.date_created }}</td>
             <td>{{ l_account.date_modified }}</td>
             <td>
@@ -37,5 +37,5 @@
       </table>
     </div>
   <!--/form-->
-<!--/p-->
+</p>
 {% endblock %}

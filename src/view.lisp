@@ -11,8 +11,8 @@
                 :compile-template*
                 :render-template*
                 :*djula-execute-package*)
-  (:import-from :cl-json
-                :encode-json)
+  (:import-from :jonathan
+                :to-json)
   (:export :render
            :render-json))
 (in-package :area91.view)
@@ -32,7 +32,7 @@
 
 (defun render-json (object)
   (setf (getf (response-headers *response*) :content-type) "application/json")
-  (encode-json object))
+  (to-json object))
 
 
 ;;

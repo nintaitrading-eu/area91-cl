@@ -24,7 +24,7 @@
                :djula
 
                ;; Json
-               :cl-json
+               :jonathan
 
                ;; Password hashing
                :cl-pass)

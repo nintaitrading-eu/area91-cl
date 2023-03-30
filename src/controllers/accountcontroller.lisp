@@ -5,14 +5,15 @@
         :area91.config
         :area91.view
         :area91.accountmodel
-        :area91.backend
-        :cl-json)
+        :area91.backend)
   (:export :show-admin-account))
 (in-package :area91.accountcontroller)
 
 (defun show-admin-account ()
   ; Show an admin page for the account.
   (let ((z-account-info (get-account-info)))
+    (progn
+      (format t ":::DEBUG::: ~A" z-account-info)
   (render #P"admin/account/account.html"
     (list 
-      :p_accounts z-account-info))))
+      :p_accounts z-account-info)))))
